@@ -72,7 +72,7 @@ class Phrase
 
     public function italique()
     {
-        echo "gras: <i>" .$this->chaine."</i><br>";
+        echo "italique: <i>" .$this->chaine."</i><br>";
     }
 
     public function souligne()
@@ -90,9 +90,35 @@ $phrase->italique();
 $phrase->souligne();
 $phrase->majuscule();
 
-
-
 ?>
+
+    <h2>Exercice 4
+        * Écrivez une classe PHP qui trie un tableau d'entiers dans l'ordre croissant en utilisant la fonction **sort()** de PHP.
+        * Créer une méthode __construc() qui prend en argument le tableau.
+        * Créer la méthode **tri** qui renvoie le tableau trié.
+        * Afficher le tableau trié à l'aide de **var_dump** ou **print_r**</h2>
+
+    <?php
+    class tricroissant{
+        private $one = 1;
+        private $deux = 2;
+        private $moinsdix = -10;
+        private $cent = 100;
+        private $mille = 1000;
+        private $moinsquatrecenttrois= -403;
+
+        function sort(){
+            
+        }
+        function __construct()
+        {
+        }
+        function tri(){
+
+            print_r($this->tricroissant;
+        }
+    }
+    ?>
 </main>
 
 </body>
