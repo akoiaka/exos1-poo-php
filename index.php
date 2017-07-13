@@ -99,26 +99,121 @@ $phrase->majuscule();
         * Afficher le tableau trié à l'aide de **var_dump** ou **print_r**</h2>
 
     <?php
-    class tricroissant{
-        private $one = 1;
-        private $deux = 2;
-        private $moinsdix = -10;
-        private $cent = 100;
-        private $mille = 1000;
-        private $moinsquatrecenttrois= -403;
 
-        function sort(){
-            
-        }
-        function __construct()
+    class TRICROISSANT{
+        public $tableau;
+
+        function __construct($tableau)
         {
+            $this->tableau=$tableau;
         }
-        function tri(){
 
-            print_r($this->tricroissant;
+        function tri()
+        {
+            $tableautrie=$this->tableau;
+            sort($tableautrie);
+            print_r($tableautrie);
         }
     }
+
+    $tableauatrier = new TRICROISSANT(array(11, -2, 4, 35, 0, 8, -9));
+    print_r($tableauatrier->tri());
     ?>
+
+<h2>## Exercice 5
+    * Réaliser une calculatrice:
+    * Ecrire une classe PHP avec un constructeur qui possède deux arguments,
+    * Écrire les méthodes qui permettent de calculer l'addition, la soustraction , la multiplication,  ou la division des deux arguments.
+
+    Exemple d'exécution:
+    $calc = new MaCalculatrice( 8, 4);
+    echo $calc- > ajout(); // affichera 12
+    echo $calc- > produit(); // affichera32
+</h2>
+
+    <?php
+    class Calculatrice{
+        /**   * Résultat des calculs   *   *
+         * @var double   *
+         * @access private   */
+        private
+            $_resultat;   /**   * Constructeur   *   *
+     * @param void   *
+     * @return void   */
+
+    public function __construct()
+    {
+        $this->_resultat = 0;
+    }
+
+    /**   * Retourne le résultat   *   *
+     * @param void   *
+     * @return double   */
+
+    public function getResultat()
+    {
+        return (double) $this->_resultat;
+    }
+
+    /**   * Réinitialise la calculatrice   *   *
+     * @param void   *
+     * @return void   */
+
+    public function init()
+    {
+        $this->_resultat = 0;
+    }
+
+    /**    * Additionne deux nombres    *
+     *  * Si un seul nombre est donné, il est aditionné au résultat    *    *
+     * @param double $a    *
+     * @param double|null $b    *
+     * @return double resultat de l'opération    */
+
+    public function additionner($a, $b = null)
+    {
+        $a = (double) $a;
+
+        if(null !== $b) {
+            $this->_resultat = $a + (double) $b;
+        }
+        else
+            {
+                $this->_resultat += $a;
+            }
+
+            return $this->getResultat();
+    }
+
+    /**    * Multiplie deux nombres    *
+     * * Si un seul nombre est donné, il est multiplié au résultat    *    *
+     * @param double $a    *
+     * @param double|null $b    *
+     * @return double resultat de l'opération    */
+
+    public function multiplier($a, $b = null)
+    {
+        $a = (double) $a;
+        if(null !== $b)
+        {
+            $this->_resultat = $a * (double) $b;
+        }
+        else
+            {
+                $this->_resultat *= $a;
+            }
+            return $this->getResultat();
+    }}
+
+    $c = new Calculatrice();
+    echo $c->additionner(10,45);
+    // retourne 55echo $c->multiplier(2);
+    // retourne 110echo $c->additionner(10)
+    // retourne 120$c->init();echo $c->multiplier(4);
+    // retourne 0echo $c->multiplier(4,3);
+    // retourne 12echo $c->additionner(12);
+    // retourne 24 ?>
+
 </main>
 
 </body>
